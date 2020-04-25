@@ -77,7 +77,7 @@ console.log("c: ", c);
 console.log("d: ", d);*/
 
 
-var persona = {
+/*var persona = {
     nombre: "Juan",
     apellido: "Perez",
     edad: 25,
@@ -114,4 +114,32 @@ console.log(persona);
 var campo = "edad";
 
 console.log(persona["nombre"]);
-console.log(persona[campo]);
+console.log(persona[campo]);*/
+
+var a = 30;
+
+function primeraFuncion(){
+    //Si se comenta la var 'a' de aquí, hace lo que se conoce como entorno global
+    var a = 20;
+    console.log(a);//Muestra el 'a' que se encuentra afuera
+}
+//Si se comenta el primer console, imprime 20,30; si se comenta el último console, imprime 30,20
+console.log(a); //Imprime 30
+primeraFuncion(); //Imprime 20
+console.log(a); //Imprime 30
+
+//Si se comentan ambas var 'a', manda error
+
+var a = 40; //Si solo esta este var 'a', mandará undefined
+//ya que existe en el entorno global pero 'a' en su momento no tiene un valor definido
+
+
+//las funciones SIEMPRE regresan un valor
+function segundaFuncion(){
+
+}
+
+var b = segundaFuncion();
+console.log(b);// Imprime undefined
+
+var c = segundaFuncion; //'c' es un objeto y no variable
