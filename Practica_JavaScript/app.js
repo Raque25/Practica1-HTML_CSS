@@ -19,7 +19,7 @@ var a = "Raquel";
 var b = 3;
 var c = true;*/
 
-var num = 10; //primitivo
+/*var num = 10; //primitivo
 var str = "texto"; //primitivo
 var bol = true; //primitivo
 var und = undefined; //primitivo
@@ -44,4 +44,34 @@ var obj = {
     }
 };
 
-console.log(obj);
+console.log(obj);*/
+
+//variables primitivas se pasan por valor
+var a = 10; //diferente valor
+var b = a; //diferente valor
+console.log("a: ", a);
+console.log("b: ", b);
+
+a = 20;
+console.log("a: ", a);
+console.log("b: ", b);
+
+b = 30;
+console.log("a: ", a);
+console.log("b: ", b);
+
+//objetos se pasan por referencia, el valor de un objeto referenciado a otro siempre tendrá el mismo valor
+var c = {
+    nombre: "María"
+}
+var d = c; //misma localidad de memoria
+console.log("c: ", c);
+console.log("d: ", d);
+
+c.nombre = "José"
+console.log("c: ", c);
+console.log("d: ", d);
+
+d.nombre = "Pedro"
+console.log("c: ", c);
+console.log("d: ", d);
