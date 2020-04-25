@@ -144,7 +144,7 @@ console.log(b);// Imprime undefined
 
 var c = segundaFuncion; //'c' es un objeto y no variable*/
 
-function obtenerAleatorio(){
+/*function obtenerAleatorio(){
     return Math.random();
 }
 console.log(obtenerAleatorio() + 10);
@@ -205,4 +205,22 @@ var nuevaFuncion = creaFuncion();
 nuevaFuncion(persona.nombre);
 
 var segundaFuncion = nuevaFuncion(persona.nombre);
-segundaFuncion();
+segundaFuncion();*/
+
+//Las funciones se le pueden poner cualquier cosa que se le puede poner a un objeto, como propiedades y metodos
+function a(){
+    console.log("Función a");
+}
+a();
+a.nombre="Maria";//regresa "Funcion a" a pesar de tener un valor de nombre
+a.name="Maria";//regresa el nombre de la variable
+a.apply()="Maria";//regresa el nombre "Maria"
+
+a.direccion = {
+    calle: "La paz",
+    numero: "123",
+    referencias: {
+        calle1: "Pipila",
+        calle2: "Fernando Montes de Oca"
+    }
+}
