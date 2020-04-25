@@ -225,7 +225,7 @@ a.direccion = {
     }
 }*/
 
-function Persona(){
+/*function Persona(){
     this.nombre = "Juan";
     this.apellido = "Galván";
     this.edad = "30";
@@ -256,4 +256,42 @@ function Persona2(nombre, apellido){
 
 var maria = new Persona2("Maria", "Mendoza");
 
-console.log(maria.nombreCompleto());
+console.log(maria.nombreCompleto());*/
+
+var nombre = "Juan Carlos";
+
+var persona = {
+    nombre: "Raquel",
+    apellido: "Velasco",
+
+    imprimirNombre: function(){
+        //console.log("Nombre completo");
+        console.log(nombre); //Si se comenta la linea de arriba y se pone esto, mandará error de que no esta definido
+                             //ya que espera que la variable nombre esté en el entorno global
+        
+        console.log(this); //con this, hace referencia al nombre encontrado dentro del objeto
+        console.log(this.nombre + " " + this.apellido);
+    },
+    direccion:{
+        calle: "La paz",
+        obtenerCalle: function() {
+            var self = this;
+
+            console.log(this); //Imprime el objeto obtenerCalle
+            console.log("La direccion es en " + this.calle); //Imprime el mensaje mas el valor de calle
+
+            var nuevaDireccion = function() {
+                //console.log(this); //Aparece window, porque esta fuera del objeto, referenciandose al entorno global
+                console.log(self); //Como no se encuentra la variable self dentro, sube un nivel y lo busca
+                console.log("La direccion es en " + self.calle);
+            }
+
+            nuevaDireccion();
+        }
+    }
+};
+
+//persona.nombre = "Andres"; //poniendo esto, hará referencia a este nombre y no el que esta dentro del objeto
+
+persona.imprimirNombre();
+persona.direccion.obtenerCalle();
