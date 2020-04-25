@@ -116,7 +116,7 @@ var campo = "edad";
 console.log(persona["nombre"]);
 console.log(persona[campo]);*/
 
-var a = 30;
+/*var a = 30;
 
 function primeraFuncion(){
     //Si se comenta la var 'a' de aquí, hace lo que se conoce como entorno global
@@ -142,4 +142,67 @@ function segundaFuncion(){
 var b = segundaFuncion();
 console.log(b);// Imprime undefined
 
-var c = segundaFuncion; //'c' es un objeto y no variable
+var c = segundaFuncion; //'c' es un objeto y no variable*/
+
+function obtenerAleatorio(){
+    return Math.random();
+}
+console.log(obtenerAleatorio() + 10);
+
+function obtenerNombre(){
+    return "Pepe";
+}
+console.log(obtenerNombre() + " Marquez");
+var nombre = obtenerNombre();
+console.log(nombre);
+
+function retBooleano(){
+    if(obtenerAleatorio() >= 0.5){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+console.log(retBooleano());
+
+if(retBooleano()){
+    console.log("Es mayor a 0.5");
+}
+else{
+    console.log("Es menor a 0.5");
+}
+
+function creaPersona(nombre, apellido){
+    //es lo mismo poner esto ...
+    //var obj = {};
+    //return obj;
+    
+    //...que esto (cuando esta vacío)
+    return{
+        nombre : nombre,
+        apellido : apellido
+    }
+}
+var persona = creaPersona("Maria", "sanchez");
+//es lo mismo esto...
+console.log(persona);
+//...que esto
+console.log(persona.nombre);
+console.log(persona.apellido);
+
+function creaFuncion(){
+    //Funcion anónima
+    return function(nombre){
+        console.log("Me creó " + nombre);
+
+        return function(){
+            console.log("Segunda creación de función");
+        }
+    }
+}
+var nuevaFuncion = creaFuncion();
+nuevaFuncion(persona.nombre);
+
+var segundaFuncion = nuevaFuncion(persona.nombre);
+segundaFuncion();
