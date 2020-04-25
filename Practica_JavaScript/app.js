@@ -47,7 +47,7 @@ var obj = {
 console.log(obj);*/
 
 //variables primitivas se pasan por valor
-var a = 10; //diferente valor
+/*var a = 10; //diferente valor
 var b = a; //diferente valor
 console.log("a: ", a);
 console.log("b: ", b);
@@ -74,4 +74,44 @@ console.log("d: ", d);
 
 d.nombre = "Pedro"
 console.log("c: ", c);
-console.log("d: ", d);
+console.log("d: ", d);*/
+
+
+var persona = {
+    nombre: "Juan",
+    apellido: "Perez",
+    edad: 25,
+    direccion: {
+        calle: "La paz",
+        numero: "123",
+        referencias: {
+            calle1: "Pipila",
+            calle2: "Fernando Montes de Oca"
+        }
+    }
+};
+
+//la notación de punto nos ayuda a sacar datos específicos
+//Va por niveles
+console.log(persona.nombre);
+console.log(persona.direccion);
+console.log(persona.direccion.calle);
+
+//agregar un nuevo campo
+persona.direccion.zipcode = 38338;
+console.log(persona.direccion);
+
+//para evitar poner este tipo de líneas largas
+console.log(persona.direccion.referencias.calle1);
+
+//apunta a una direccion en específico
+var referencias = persona.direccion.referencias;
+referencias.telefono = "1234-5678";
+
+console.log(persona);
+
+//La notación por corchete se usa para manejo de datos de manera dinaámica
+var campo = "edad";
+
+console.log(persona["nombre"]);
+console.log(persona[campo]);
