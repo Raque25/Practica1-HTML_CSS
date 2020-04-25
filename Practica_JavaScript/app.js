@@ -208,7 +208,7 @@ var segundaFuncion = nuevaFuncion(persona.nombre);
 segundaFuncion();*/
 
 //Las funciones se le pueden poner cualquier cosa que se le puede poner a un objeto, como propiedades y metodos
-function a(){
+/*function a(){
     console.log("Función a");
 }
 a();
@@ -223,4 +223,37 @@ a.direccion = {
         calle1: "Pipila",
         calle2: "Fernando Montes de Oca"
     }
+}*/
+
+function Persona(){
+    this.nombre = "Juan";
+    this.apellido = "Galván";
+    this.edad = "30";
+
+    this.nombreCompleto = function(){
+        return this.nombre + " " + this.apellido;
+    }
+
+    //console.log("paso por aquí");
 }
+var juan = new Persona(); //crea un objeto vacío (si lo esta en la función de arriba) pero sabe que es de tipo persona
+//var juan = Persona(); //regresa un undefined porque se convirtió en una función normal, las variables se van al objeto global
+
+console.log(juan);
+console.log(juan.nombre);
+console.log(juan.nombreCompleto());
+
+function Persona2(nombre, apellido){
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.edad = "32";
+
+    this.nombreCompleto = function(){
+        return this.nombre + " " + this.apellido;
+    }
+
+}
+
+var maria = new Persona2("Maria", "Mendoza");
+
+console.log(maria.nombreCompleto());
